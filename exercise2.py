@@ -24,8 +24,37 @@ def name_that_shape():
     Errors:
 
     """
+    sides = raw_input ("Enter the number of sides on your polygon")
 
-    print("Error")
+    if sides == "3" or sides.lower() == "three":
+        print ("Your shape is a Triangle!")
+
+    elif sides == "4" or sides.lower() == "four":
+        print ("Your shape is a Quadrilateral!")
+
+    elif sides == "5" or sides.lower() == "five":
+        print ("Your shape is a Pentagon!")
+
+    elif sides == "6" or sides.lower() == "six":
+        print ("Your shape is a Hexagon!")
+
+    elif sides == "7" or sides.lower() == "seven":
+        print ("Your shape is a Heptagon!")
+
+    elif sides == "8" or sides.lower() == "eight":
+        print ("Your shape is an Octagon!")
+
+    elif sides == "9" or sides.lower() == "nine":
+        print ("Your shape is a Nonagon!")
+
+    elif sides == "10" or sides.lower() == "ten":
+        print ("Your shape is a Decagon!")
+
+    else:
+        print ("Please enter a whole number between 3 and 10")
+        name_that_shape()
+
+
 
 
 name_that_shape()
