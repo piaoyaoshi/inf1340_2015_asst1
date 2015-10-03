@@ -14,8 +14,8 @@ __license__ = "MIT License"
 
 
 def name_that_shape():
-    """
-    For a given number of sides in a regular polygon, returns the shape name
+    """ () -> string
+    For a given number_of_sides in a regular polygon, returns the shape name
 
     Inputs:
 
@@ -23,9 +23,22 @@ def name_that_shape():
 
     Errors:
 
+    >>>3
+    Triangle
+    >>>12
+    Error
+
     """
 
-    print("Error")
+    dict = {'3': 'Triangle', '4': 'Quadrilateral', '5': 'Pentagon', '6': 'Hexagon',
+            '7': 'Heptagons', '8': 'Octagon', '9': 'Nonagon', '10': 'Decagon'}
+
+    number_of_sides = raw_input("Please enter the number of sides (only valid from 3 to 10):")
+
+    if number_of_sides in dict.keys():
+        print(dict[number_of_sides])
+    else:
+        print("Error")
 
 
 name_that_shape()

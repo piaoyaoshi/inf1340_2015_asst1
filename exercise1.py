@@ -23,10 +23,13 @@ qty_sold = 2000
 sell_price = 942.73
 
 book_value = qty_bought * purchase_price
-amount_received = qty_sold * sell_price
+purchase_fee = book_value * commission_rate
 
-money = money + amount_received * (1 - commission_rate) - book_value * commission_rate
-profit = amount_received - book_value - (amount_received + book_value) * commission_rate
+amount_received = qty_sold * sell_price
+sell_fee = amount_received * commission_rate
+
+money = money + amount_received - sell_fee - purchase_fee
+profit = (amount_received - book_value) - sell_fee - purchase_fee
 
 print('Lakshmi had $'),
 print(money),
