@@ -29,26 +29,26 @@ def diagnose_car():
 
     check_silence = raw_input('Is the car silent when you turn the key? (Y/N)')
 
-    while not ((check_silence == 'Y') or (check_silence == 'N')):
+    while check_silence not in ['Y', 'N']:
         print(error_msg)
         check_silence = raw_input('Is the car silent when you turn the key? (Y/N)')
     if check_silence == 'Y':
 
         check_battery = raw_input('Are the battery terminals corroded? (Y/N)')
 
-        while not ((check_battery == 'Y') or (check_battery == 'N')):
+        while check_battery not in ['Y', 'N']:
             print(error_msg)
             check_battery = raw_input('Are the battery terminals corroded? (Y/N)')
         if check_battery == 'Y':
             print('Clean terminals and try starting again')
         if check_battery == 'N':
-            print('The battery cables may be damaged.Replace cables and try again')
+            print('The battery cables may be damaged. Replace cables and try again')
 
     if check_silence == 'N':
 
         check_noise = raw_input('Does the car make a clicking noise? (Y/N)')
 
-        while not ((check_noise == 'Y') or (check_noise == 'N')):
+        while check_noise not in ['Y', 'N']:
             print(error_msg)
             check_noise = raw_input('Does the car make a clicking noise? (Y/N)')
         if check_noise == 'Y':
@@ -57,7 +57,7 @@ def diagnose_car():
 
             check_crank = raw_input('Does the car crank up but fail to start? (Y/N)')
 
-            while not ((check_crank == 'Y') or (check_crank == 'N')):
+            while check_crank not in ['Y', 'N']:
                 print(error_msg)
                 check_crank = raw_input('Does the car crank up but fail to start? (Y/N)')
             if check_crank == 'Y':
@@ -66,7 +66,7 @@ def diagnose_car():
 
                 check_engine = raw_input('Does the engine start and then die? (Y/N)')
 
-                while not ((check_engine == 'Y') or (check_engine == 'N')):
+                while check_engine not in ['Y', 'N']:
                     print(error_msg)
                     check_engine = raw_input('Does the engine start and then die? (Y/N)')
                 if check_engine == 'N':
@@ -75,7 +75,7 @@ def diagnose_car():
 
                     check_fuel = raw_input('Does your car have fuel injection? (Y/N)')
 
-                    while not ((check_fuel == 'Y') or (check_fuel == 'N')):
+                    while check_fuel not in ['Y', 'N']:
                         print(error_msg)
                         check_fuel = raw_input('Does your car have fuel injection? (Y/N)')
                     if check_fuel == 'Y':
