@@ -12,24 +12,27 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+
 money = 0
+commission_rate = 0.03
 
-def stock_ticker(money):
-    #Variables needed for the program
-    share_cost = 900.00
-    shares = 2000
-    commission_rate = 3.00 / 100.00
+qty_bought = 2000
+purchase_price = 900
 
-    #This will calculate the amount paid for the stocks
-    total_holdings = shares * share_cost
-    commission = total_holdings * commission_rate
-    money = money - (total_holdings - commission)
+qty_sold = 2000
+sell_price = 942.73
 
-    #This will calculate how much the stocks were sold for and they money made
-    share_cost = 942.75
-    total_holdings = shares * share_cost
-    commission = total_holdings * commission_rate
-    money = money + (total_holdings - commission)
-    print money
+book_value = qty_bought * purchase_price
+purchase_fee = book_value * commission_rate
 
-stock_ticker(money)
+amount_received = qty_sold * sell_price
+sell_fee = amount_received * commission_rate
+
+money = money + amount_received - sell_fee - purchase_fee
+profit = (amount_received - book_value) - sell_fee - purchase_fee
+
+print('Lakshmi had $'),
+print(money),
+print('left, and she made a profit of $'),
+print('%.2f' % profit),
+print('(negative sign means a loss).')

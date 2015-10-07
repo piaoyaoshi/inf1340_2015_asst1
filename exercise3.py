@@ -18,13 +18,14 @@ def diagnose_car():
     Interactively queries the user with yes/no questions to identify a
     possible issue with a car.
 
-    Inputs:
+    Inputs:y,n,yes,no
 
     Expected Outputs:
 
     Errors:
 
     """
+    # This function is the first box in the flow chart
     def silent_fun():
         silent = raw_input("Is the car silent when you turn the key?")
         if silent == "y" or silent.lower() == "yes":
@@ -76,7 +77,7 @@ def diagnose_car():
         if engine == "y" or engine.lower() == "yes":
             fuel_fun()
         if engine == "n" or engine.lower() == "no":
-            print ("The battery cables may be damaged. Replace cables and try again.")
+            print ("Engine is not getting enough fuel. Clean fuel pump")
             exit()
         if engine != "y" or "yes" or "n" or "no":
             print ("I don't understand")
@@ -97,3 +98,5 @@ def diagnose_car():
     silent_fun()
 
 diagnose_car()
+
+
