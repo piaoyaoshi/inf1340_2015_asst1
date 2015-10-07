@@ -25,62 +25,62 @@ def diagnose_car():
     Errors:
 
     """
-    error_msg = 'Invalid input, please input Y / N only'
+    error_msg = 'I do not understand, please enter Y / N only'
 
-    diag_1 = raw_input('Is the car silent when you turn the key? (Y/N)')
+    check_silence = raw_input('Is the car silent when you turn the key? (Y/N)')
 
-    while not ((diag_1 == 'Y') or (diag_1 == 'N')):
+    while not ((check_silence == 'Y') or (check_silence == 'N')):
         print(error_msg)
-        diag_1 = raw_input('Is the car silent when you turn the key? (Y/N)')
-    if diag_1 == 'Y':
+        check_silence = raw_input('Is the car silent when you turn the key? (Y/N)')
+    if check_silence == 'Y':
 
-        diag_2 = raw_input('Are the battery terminals corroded? (Y/N)')
+        check_battery = raw_input('Are the battery terminals corroded? (Y/N)')
 
-        while not ((diag_2 == 'Y') or (diag_2 == 'N')):
+        while not ((check_battery == 'Y') or (check_battery == 'N')):
             print(error_msg)
-            diag_2 = raw_input('Are the battery terminals corroded? (Y/N)')
-        if diag_2 == 'Y':
+            check_battery = raw_input('Are the battery terminals corroded? (Y/N)')
+        if check_battery == 'Y':
             print('Clean terminals and try starting again')
-        if diag_2 == 'N':
+        if check_battery == 'N':
             print('The battery cables may be damaged.Replace cables and try again')
 
-    if diag_1 == 'N':
+    if check_silence == 'N':
 
-        diag_3 = raw_input('Does the car make a clicking noise? (Y/N)')
+        check_noise = raw_input('Does the car make a clicking noise? (Y/N)')
 
-        while not ((diag_3 == 'Y') or (diag_3 == 'N')):
+        while not ((check_noise == 'Y') or (check_noise == 'N')):
             print(error_msg)
-            diag_3 = raw_input('Does the car make a clicking noise? (Y/N)')
-        if diag_3 == 'Y':
+            check_noise = raw_input('Does the car make a clicking noise? (Y/N)')
+        if check_noise == 'Y':
             print('Replace the battery')
-        if diag_3 == 'N':
+        if check_noise == 'N':
 
-            diag_4 = raw_input('Does the car crank up but fail to start? (Y/N)')
+            check_crank = raw_input('Does the car crank up but fail to start? (Y/N)')
 
-            while not ((diag_4 == 'Y') or (diag_4 == 'N')):
+            while not ((check_crank == 'Y') or (check_crank == 'N')):
                 print(error_msg)
-                diag_4 = raw_input('Does the car crank up but fail to start? (Y/N)')
-            if diag_4 == 'Y':
+                check_crank = raw_input('Does the car crank up but fail to start? (Y/N)')
+            if check_crank == 'Y':
                 print('Check spark plug connections.')
-            if diag_4 == 'N':
+            if check_crank == 'N':
 
-                diag_5 = raw_input('Does the engine start and then die? (Y/N)')
+                check_engine = raw_input('Does the engine start and then die? (Y/N)')
 
-                while not ((diag_5 == 'Y') or (diag_5 == 'N')):
+                while not ((check_engine == 'Y') or (check_engine == 'N')):
                     print(error_msg)
-                    diag_5 = raw_input('Does the engine start and then die? (Y/N)')
-                if diag_5 == 'N':
+                    check_engine = raw_input('Does the engine start and then die? (Y/N)')
+                if check_engine == 'N':
                     print('Engine is not getting enough fuel. Clean fuel pump')
-                if diag_5 == 'Y':
+                if check_engine == 'Y':
 
-                    diag_6 = raw_input('Does your car have fuel injection? (Y/N)')
+                    check_fuel = raw_input('Does your car have fuel injection? (Y/N)')
 
-                    while not ((diag_6 == 'Y') or (diag_6 == 'N')):
+                    while not ((check_fuel == 'Y') or (check_fuel == 'N')):
                         print(error_msg)
-                        diag_6 = raw_input('Does your car have fuel injection? (Y/N)')
-                    if diag_6 == 'Y':
+                        check_fuel = raw_input('Does your car have fuel injection? (Y/N)')
+                    if check_fuel == 'Y':
                         print('Get it in for service')
-                    if diag_6 == 'N':
+                    if check_fuel == 'N':
                         print('Check to ensure the choke is opening and closing.')
 
 
