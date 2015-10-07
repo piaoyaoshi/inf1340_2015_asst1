@@ -17,11 +17,11 @@ def name_that_shape():
     """
     For a given number of sides in a regular polygon, returns the shape name
 
-    Inputs:
+    Inputs:3,4,5
 
-    Expected Outputs:
+    Expected Outputs:Triangle,Quadrilateral,Pentagon
 
-    Errors:
+    Errors:None
 
     >>>3
     Triangle
@@ -30,11 +30,14 @@ def name_that_shape():
 
     """
 
+    # This is the dictionary containing key value pairs
     dict = {'3': 'Triangle', '4': 'Quadrilateral', '5': 'Pentagon', '6': 'Hexagon',
             '7': 'Heptagons', '8': 'Octagon', '9': 'Nonagon', '10': 'Decagon'}
 
+    # This code asks for user input of number of sides
     number_of_sides = raw_input("Please enter the number of sides (only valid from 3 to 10):")
 
+    # This code assess if the entered number is a key in the dictionary and if so prints the value
     if number_of_sides in dict.keys():
         print(dict[number_of_sides])
     else:
