@@ -17,23 +17,45 @@ def name_that_shape():
     """ () -> string
     For a given number_of_sides in a regular polygon, returns the shape name
 
-    Inputs:
+    Input:Please enter the number of sides (only valid from 3 to 10):3
+    Expected Output: Triangle
 
-    Expected Outputs:
+    Input:Please enter the number of sides (only valid from 3 to 10):10
+    Expected Output: Decagon
 
-    Errors:
+    Input:Please enter the number of sides (only valid from 3 to 10):20
+    Expected Output: Error
 
-    >>>3
-    Triangle
-    >>>12
-    Error
+    Input:Please enter the number of sides (only valid from 3 to 10):1
+    Expected Output: Error
+
+    Input:Please enter the number of sides (only valid from 3 to 10):3.0
+    Expected Output: Error
+
+    Input:Please enter the number of sides (only valid from 3 to 10):
+    Expected Output: Error
+
+    Input:Please enter the number of sides (only valid from 3 to 10):three
+    Expected Output: Error
+
+    Input:Please enter the number of sides (only valid from 3 to 10):*&%
+    Expected Output: Error
+
+    Input:Please enter the number of sides (only valid from 3 to 10):3 ok
+    Expected Output: Error
+
 
     """
+    # This is the dictionary containing key value pairs
 
     dict = {'3': 'Triangle', '4': 'Quadrilateral', '5': 'Pentagon', '6': 'Hexagon',
             '7': 'Heptagons', '8': 'Octagon', '9': 'Nonagon', '10': 'Decagon'}
 
+    # This code asks for user input of number of sides
+
     number_of_sides = raw_input("Please enter the number of sides (only valid from 3 to 10):")
+
+    # This code assess if the entered number is a key in the dictionary and if so prints the value
 
     if number_of_sides in dict.keys():
         print(dict[number_of_sides])
