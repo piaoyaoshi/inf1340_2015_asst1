@@ -12,44 +12,52 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-
 def name_that_shape():
-    """ ()
-    For a given number_of_sides in a regular polygon, returns the shape name
-
-    Input:Please enter the number of sides (only valid from 3 to 10):3
-    Expected Output: Triangle
-
-    Input:Please enter the number of sides (only valid from 3 to 10):10
-    Expected Output: Decagon
-
-    Input:Please enter the number of sides (only valid from 3 to 10):20
-    Expected Output: Error
-
-    Input:Please enter the number of sides (only valid from 3 to 10):1
-    Expected Output: Error
-
-    Input:Please enter the number of sides (only valid from 3 to 10):3.0
-    Expected Output: Error
-
-    Input:Please enter the number of sides (only valid from 3 to 10):
-    Expected Output: Error
-
-    Input:Please enter the number of sides (only valid from 3 to 10):three
-    Expected Output: Error
-
-    Input:Please enter the number of sides (only valid from 3 to 10):*&%
-    Expected Output: Error
-
-    Input:Please enter the number of sides (only valid from 3 to 10):3 ok
-    Expected Output: Error
-
 
     """
-    # This is the dictionary containing key value pairs
+        This function accepts a number as input (between 3 and 10). Outputs the name of a shape that has that number of sides.
 
-    dict = {'3': 'triangle', '4': 'quadrilateral', '5': 'pentagon', '6': 'hexagon',
-            '7': 'heptagon', '8': 'octagon', '9': 'nonagon', '10': 'decagon'}
+        A few test cases
+        ----------------
+        Input:Please enter the number of sides (only valid from 3 to 10):3
+        Expected Output: Triangle
+
+        Input:Please enter the number of sides (only valid from 3 to 10):10
+        Expected Output: Decagon
+
+        Input:Please enter the number of sides (only valid from 3 to 10):20
+        Expected Output: Error
+
+        Input:Please enter the number of sides (only valid from 3 to 10):1
+        Expected Output: Error
+
+        Input:Please enter the number of sides (only valid from 3 to 10):3.0
+        Expected Output: Error
+
+        Input:Please enter the number of sides (only valid from 3 to 10):
+        Expected Output: Error
+
+        Input:Please enter the number of sides (only valid from 3 to 10):three
+        Expected Output: Error
+
+        Input:Please enter the number of sides (only valid from 3 to 10):*&%
+        Expected Output: Error
+
+        Input:Please enter the number of sides (only valid from 3 to 10):3 ok
+        Expected Output: Error
+
+        This is the dictionary containing key value pairs
+    """
+    dictionary = {
+        '3': 'triangle',
+        '4': 'quadrilateral',
+        '5': 'pentagon',
+        '6': 'hexagon',
+        '7': 'heptagon',
+        '8': 'octagon',
+        '9': 'nonagon',
+        '10': 'decagon'
+    }
 
     # This code asks for user input of number of sides
 
@@ -58,7 +66,7 @@ def name_that_shape():
     # This code assess if the entered number is a key in the dictionary and if so prints the value
 
     if number_of_sides in dict.keys():
-        print(dict[number_of_sides])
+        print(dictionary[number_of_sides])
     else:
         print("Error")
 
