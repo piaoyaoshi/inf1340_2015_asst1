@@ -18,80 +18,84 @@ def diagnose_car():
     Interactively queries the user with yes/no questions to identify a
     possible issue with a car.
 
-    Inputs:y,n,yes,no
+    Inputs:y,n
 
     Expected Outputs:
 
     Errors:
 
     """
+    # Each function represents a box in the flow chart
+    # The functions will call the next function or "box" depending on user input
+    # If input is not y or n the function will print "I don't understand" and re-call itself
+
     # This function is the first box in the flow chart
     def silent_fun():
         silent = raw_input("Is the car silent when you turn the key?")
-        if silent == "y" or silent.lower() == "yes":
+        if silent == "y":
             corroded_fun()
-        if silent == "n"or silent.lower() == "no":
+        if silent == "n":
             click_fun()
-        if silent != "y" or "yes" or "n" or "no":
+        if silent != "y" or "n":
             print ("I don't understand")
             silent_fun()
 
     # This is the left side of the flowchart
     def corroded_fun():
         corroded = raw_input("Are the battery terminals corroded?")
-        if corroded == "y" or corroded.lower() == "yes":
+        if corroded == "y":
             print ("Clean terminals and try starting again.")
             exit()
-        if corroded == "n" or corroded.lower() == "no":
-            print ("Replace cables and try again")
+        if corroded == "n":
+            print ("Replace cables and try again.")
             exit()
-        if corroded != "y" or "yes" or "n" or "no":
+        if corroded != "y" or "n":
             print ("I don't understand")
             corroded_fun()
 
     # Everything below is the right side of the flow chart
     def click_fun():
         click = raw_input("Does the car make a clicking noise?")
-        if click == "y" or click.lower() == "yes":
-            print ("Replace the battery")
+        if click == "y":
+            print ("Replace the battery.")
             exit()
-        if click == "n" or click.lower() == "no":
+        if click == "n":
             crank_fun()
-        if click != "y" or "yes" or "n" or "no":
+        if click != "y" or "n":
             print ("I don't understand")
             click_fun()
 
     def crank_fun():
         crank = raw_input("Does the car crank up but fail to start?")
-        if crank == "y" or crank.lower() == "yes":
+        if crank == "y":
             print ("Check spark plug connections.")
             exit()
-        if crank == "n" or crank.lower() == "no":
+        if crank == "n":
             engine_fun()
-        if crank != "y" or "yes" or "n" or "no":
+        if crank != "y" or "n":
             print ("I don't understand")
             crank_fun()
 
     def engine_fun():
         engine = raw_input("Does engine start and then die?")
-        if engine == "y" or engine.lower() == "yes":
+        if engine == "y":
             fuel_fun()
-        if engine == "n" or engine.lower() == "no":
-            print ("Engine is not getting enough fuel. Clean fuel pump")
+        if engine == "n":
+            print ("Engine is not getting enough fuel. Clean fuel pump.")
             exit()
-        if engine != "y" or "yes" or "n" or "no":
+        if engine != "y" or "n":
             print ("I don't understand")
             engine_fun()
 
     def fuel_fun():
         fuel = raw_input("Does your car have fuel injection?")
-        if fuel == "n" or fuel.lower() == "no":
-            print ("Check to ensure the choke is opening and closing")
+        if fuel == "n":
+            print ("Check to ensure the choke is opening and closing.")
             exit()
-        if fuel == "y" or fuel.lower() == "yes":
+        if fuel == "y":
             print ("Get it in for service")
             exit()
-        if fuel != "y" or "yes" or "n" or "no":
+        if fuel != "y" or "n":
             print ("I don't understand")
             fuel_fun()
 
