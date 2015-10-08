@@ -43,10 +43,8 @@ def diagnose_car():
         corroded = raw_input("Are the battery terminals corroded?")
         if corroded == "Y":
             print ("Clean terminals and try starting again.")
-            exit()
         elif corroded == "N":
             print ("Replace cables and try again.")
-            exit()
         else:
             print (error)
             check_battery()
@@ -56,7 +54,6 @@ def diagnose_car():
         click = raw_input("Does the car make a clicking noise?")
         if click == "Y":
             print ("Replace the battery.")
-            exit()
         elif click == "N":
             check_crank()
         else:
@@ -67,7 +64,6 @@ def diagnose_car():
         crank = raw_input("Does the car crank up but fail to start?")
         if crank == "Y":
             print ("Check spark plug connections.")
-            exit()
         elif crank == "N":
             check_engine()
         else:
@@ -80,7 +76,6 @@ def diagnose_car():
             check_fuel()
         elif engine == "N":
             print ("Engine is not getting enough fuel. Clean fuel pump.")
-            exit()
         else:
             print (error)
             check_engine()
@@ -89,16 +84,14 @@ def diagnose_car():
         fuel = raw_input("Does your car have fuel injection?")
         if fuel == "N":
             print ("Check to ensure the choke is opening and closing.")
-            exit()
         elif fuel == "Y":
-            print ("Get it in for service")
-            exit()
+            print ("Get it in for service.")
         else:
             print (error)
             check_fuel()
 
     check_silence()
 
-diagnose_car()
+#diagnose_car()
 
 
