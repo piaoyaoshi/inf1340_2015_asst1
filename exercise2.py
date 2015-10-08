@@ -48,6 +48,9 @@ def name_that_shape():
 
         This is the dictionary containing key value pairs
     """
+    #Reasons for using dictionary instead of multiple if_statements: type dictionary makes the code simpler and more elegant,
+    #and it is easier for adding, removing or adjusting keys in future.
+
     dictionary = {
         '3': 'triangle',
         '4': 'quadrilateral',
@@ -56,14 +59,9 @@ def name_that_shape():
         '7': 'heptagon',
         '8': 'octagon',
         '9': 'nonagon',
-        '10': 'decagon'
-    }
-
-    # This code asks for user input of number of sides
+        '10': 'decagon'}
 
     number_of_sides = raw_input("Please enter the number of sides (only valid from 3 to 10):")
-
-    # This code assess if the entered number is a key in the dictionary and if so prints the value
 
     if number_of_sides in dictionary.keys():
         print(dictionary[number_of_sides])
