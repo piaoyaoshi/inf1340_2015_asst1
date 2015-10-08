@@ -35,8 +35,5 @@ amount_received = stock_income - selling_commission
 
 profit = amount_received - amount_spent
 
-
-print('Lakshmi spent %.2f getting the stock' % amount_spent)
-print('She received %.2f after selling the stock' % amount_received)
 print('Now she has a profit of %.2f' % profit),
 print('(negative sign means a loss).')
