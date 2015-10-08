@@ -85,13 +85,13 @@ def diagnose_car():
         if fuel == "N":
             print ("Check to ensure the choke is opening and closing.")
         elif fuel == "Y":
-            print ("Get it in for service")
+            print ("Get it in for service.")
         else:
             print (error)
             check_fuel()
 
     check_silence()
 
-diagnose_car()
+#diagnose_car()
 
 
