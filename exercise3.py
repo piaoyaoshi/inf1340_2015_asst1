@@ -18,88 +18,86 @@ def diagnose_car():
     Interactively queries the user with yes/no questions to identify a
     possible issue with a car.
 
-    Inputs:y,n
+    Inputs:y,n,yes,no
 
     Expected Outputs:
 
     Errors:
 
     """
-    # Each function represents a box in the flow chart
-    # The functions will call the next function or "box" depending on user input
-    # If input is not y or n the function will print "I don't understand" and re-call itself
-
+    error = 'I don\'t understand'
     # This function is the first box in the flow chart
-    def silent_fun():
+
+    def check_silence():
         silent = raw_input("Is the car silent when you turn the key?")
         if silent == "y":
-            corroded_fun()
-        if silent == "n":
-            click_fun()
-        if silent != "y" or "n":
-            print ("I don't understand")
-            silent_fun()
+            check_battery()
+        elif silent == "n":
+            check_noise()
+        else:
+            print (error)
+            check_silence()
 
     # This is the left side of the flowchart
-    def corroded_fun():
+    def check_battery():
         corroded = raw_input("Are the battery terminals corroded?")
         if corroded == "y":
             print ("Clean terminals and try starting again.")
             exit()
-        if corroded == "n":
-            print ("Replace cables and try again.")
+        elif corroded == "n":
+            print ("Replace cables and try again")
             exit()
-        if corroded != "y" or "n":
-            print ("I don't understand")
-            corroded_fun()
+        else:
+            print (error)
+            check_battery()
 
     # Everything below is the right side of the flow chart
-    def click_fun():
+    def check_noise():
         click = raw_input("Does the car make a clicking noise?")
         if click == "y":
-            print ("Replace the battery.")
+            print ("Replace the battery")
             exit()
-        if click == "n":
-            crank_fun()
-        if click != "y" or "n":
-            print ("I don't understand")
-            click_fun()
+        elif click == "n":
+            check_crank()
+        else:
+            print (error)
+            check_noise()
 
-    def crank_fun():
+    def check_crank():
         crank = raw_input("Does the car crank up but fail to start?")
         if crank == "y":
             print ("Check spark plug connections.")
             exit()
-        if crank == "n":
-            engine_fun()
-        if crank != "y" or "n":
-            print ("I don't understand")
-            crank_fun()
+        elif crank == "n":
+            check_engine()
+        else:
+            print (error)
+            check_crank()
 
-    def engine_fun():
+    def check_engine():
         engine = raw_input("Does engine start and then die?")
         if engine == "y":
-            fuel_fun()
-        if engine == "n":
-            print ("Engine is not getting enough fuel. Clean fuel pump.")
+            check_fuel()
+        elif engine == "n":
+            print ("Engine is not getting enough fuel. Clean fuel pump")
             exit()
-        if engine != "y" or "n":
-            print ("I don't understand")
-            engine_fun()
+        else:
+            print (error)
+            check_engine()
 
-    def fuel_fun():
+    def check_fuel():
         fuel = raw_input("Does your car have fuel injection?")
         if fuel == "n":
-            print ("Check to ensure the choke is opening and closing.")
+            print ("Check to ensure the choke is opening and closing")
             exit()
-        if fuel == "y":
+        elif fuel == "y":
             print ("Get it in for service")
             exit()
-        if fuel != "y" or "n":
-            print ("I don't understand")
-            fuel_fun()
+        else:
+            print (error)
+            check_fuel()
 
-    silent_fun()
+    check_silence()
 
 diagnose_car()
 
