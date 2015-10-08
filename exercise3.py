@@ -18,14 +18,32 @@ def diagnose_car():
     Interactively queries the user with yes/no questions to identify a
     possible issue with a car.
 
-    Inputs:y,n,yes,no
+    Test Cases
+    Inputs:Y,N
+    Expected: Outputs:Replace cables and try again.
 
-    Expected Outputs:
+    Inputs:Y,Y
+    Expected: Clean terminals and try starting again.
 
-    Errors:
+    Inputs:N,Y
+    Expected:Replace the battery.
 
+    Inputs:N,N,Y
+    Expected:Check spark plug connections.
+
+    Inputs:N,N,N,N
+    Expected: Engine is not getting enough fuel. Clean fuel pump.
+
+    Inputs:N,N,N,Y,Y
+    Expected: Get it in for service.
+
+    Inputs:N,N,N,Y,N
+    Expected: Check to ensure the choke is opening and closing.
     """
+
+    #error message in case of improper user input
     error = 'I don\'t understand'
+
     # This function is the first box in the flow chart
 
     def check_silence():
@@ -92,6 +110,6 @@ def diagnose_car():
 
     check_silence()
 
-#diagnose_car()
+diagnose_car()
 
 
