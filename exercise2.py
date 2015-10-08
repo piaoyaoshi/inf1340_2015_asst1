@@ -65,7 +65,7 @@ def name_that_shape():
 
     # This code assess if the entered number is a key in the dictionary and if so prints the value
 
-    if number_of_sides in dict.keys():
+    if number_of_sides in dictionary.keys():
         print(dictionary[number_of_sides])
     else:
         print("Error")
