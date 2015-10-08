@@ -19,26 +19,24 @@ __license__ = "MIT License"
     This program fixes that! Now, she's soooo happy :)
 """
 
-money = 0
-commission_rate = 0.03 #same commission during purchase and sale
 
-qty_bought = 2000
-purchase_price = 900
+commission_rate = 0.03
+stock_quantity = 2000
+cost_price = 900
+selling_price = 942.75
 
-qty_sold = 2000
-sell_price = 942.73
+stock_cost = stock_quantity * cost_price  #amount stock was bought
+purchase_commission = commission_rate * stock_cost  #amount paid to stock broker for buying
+amount_spent = stock_cost + purchase_commission
 
-book_value = qty_bought * purchase_price #shares cost value
-purchase_fee = book_value * commission_rate #commision paid to stockbroker for purchase
+stock_income = stock_quantity * selling_price #amount the stock was sold
+selling_commission = commission_rate * stock_income #amount paid to stock broker for selling
+amount_received = stock_income - selling_commission
 
-amount_received = qty_sold * sell_price #shares selling value
-sell_fee = amount_received * commission_rate #commision paid to stockbroker for sale
+profit = amount_received - amount_spent
 
-money = money + amount_received - sell_fee - purchase_fee
-profit = (amount_received - book_value) - sell_fee - purchase_fee
 
-print('Lakshmi had $'),
-print(money),
-print('left, and she made a profit of $'),
-print('%.2f' % profit),
+print('Lakshmi spent %.2f getting the stock' % amount_spent)
+print('She received %.2f after selling the stock' % amount_received)
+print('Now she has a profit of %.2f' % profit),
 print('(negative sign means a loss).')
