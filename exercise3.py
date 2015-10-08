@@ -40,12 +40,12 @@ def diagnose_car():
     Inputs:N,N,N,Y,N
     Expected: Check to ensure the choke is opening and closing.
     """
+    # Each function represents a box on flowchart and supports re-usability
 
-    #error message in case of improper user input
+    # Error message in case of improper user input
     error = 'I don\'t understand'
 
     # This function is the first box in the flow chart
-
     def check_silence():
         silent = raw_input("Is the car silent when you turn the key?")
         if silent == "Y":
