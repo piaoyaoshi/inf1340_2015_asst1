@@ -92,6 +92,6 @@ def diagnose_car():
 
     check_silence()
 
-diagnose_car()
+#diagnose_car()
 
 
