@@ -18,71 +18,85 @@ def diagnose_car():
     Interactively queries the user with yes/no questions to identify a
     possible issue with a car.
 
-    Inputs:
+    Inputs:y,n,yes,no
 
     Expected Outputs:
 
     Errors:
 
     """
-    error_msg = 'I do not understand, please enter Y / N only'
+    # This function is the first box in the flow chart
+    def silent_fun():
+        silent = raw_input("Is the car silent when you turn the key?")
+        if silent == "y" or silent.lower() == "yes":
+            corroded_fun()
+        if silent == "n"or silent.lower() == "no":
+            click_fun()
+        if silent != "y" or "yes" or "n" or "no":
+            print ("I don't understand")
+            silent_fun()
 
-    check_silence = raw_input('Is the car silent when you turn the key? (Y/N)')
+    # This is the left side of the flowchart
+    def corroded_fun():
+        corroded = raw_input("Are the battery terminals corroded?")
+        if corroded == "y" or corroded.lower() == "yes":
+            print ("Clean terminals and try starting again.")
+            exit()
+        if corroded == "n" or corroded.lower() == "no":
+            print ("Replace cables and try again")
+            exit()
+        if corroded != "y" or "yes" or "n" or "no":
+            print ("I don't understand")
+            corroded_fun()
 
-    while check_silence not in ['Y', 'N']:
-        print(error_msg)
-        check_silence = raw_input('Is the car silent when you turn the key? (Y/N)')
-    if check_silence == 'Y':
+    # Everything below is the right side of the flow chart
+    def click_fun():
+        click = raw_input("Does the car make a clicking noise?")
+        if click == "y" or click.lower() == "yes":
+            print ("Replace the battery")
+            exit()
+        if click == "n" or click.lower() == "no":
+            crank_fun()
+        if click != "y" or "yes" or "n" or "no":
+            print ("I don't understand")
+            click_fun()
 
-        check_battery = raw_input('Are the battery terminals corroded? (Y/N)')
+    def crank_fun():
+        crank = raw_input("Does the car crank up but fail to start?")
+        if crank == "y" or crank.lower() == "yes":
+            print ("Check spark plug connections.")
+            exit()
+        if crank == "n" or crank.lower() == "no":
+            engine_fun()
+        if crank != "y" or "yes" or "n" or "no":
+            print ("I don't understand")
+            crank_fun()
 
-        while check_battery not in ['Y', 'N']:
-            print(error_msg)
-            check_battery = raw_input('Are the battery terminals corroded? (Y/N)')
-        if check_battery == 'Y':
-            print('Clean terminals and try starting again')
-        if check_battery == 'N':
-            print('The battery cables may be damaged. Replace cables and try again')
+    def engine_fun():
+        engine = raw_input("Does engine start and then die?")
+        if engine == "y" or engine.lower() == "yes":
+            fuel_fun()
+        if engine == "n" or engine.lower() == "no":
+            print ("Engine is not getting enough fuel. Clean fuel pump")
+            exit()
+        if engine != "y" or "yes" or "n" or "no":
+            print ("I don't understand")
+            engine_fun()
 
-    if check_silence == 'N':
+    def fuel_fun():
+        fuel = raw_input("Does your car have fuel injection?")
+        if fuel == "n" or fuel.lower() == "no":
+            print ("Check to ensure the choke is opening and closing")
+            exit()
+        if fuel == "y" or fuel.lower() == "yes":
+            print ("Get it in for service")
+            exit()
+        if fuel != "y" or "yes" or "n" or "no":
+            print ("I don't understand")
+            fuel_fun()
 
-        check_noise = raw_input('Does the car make a clicking noise? (Y/N)')
-
-        while check_noise not in ['Y', 'N']:
-            print(error_msg)
-            check_noise = raw_input('Does the car make a clicking noise? (Y/N)')
-        if check_noise == 'Y':
-            print('Replace the battery')
-        if check_noise == 'N':
-
-            check_crank = raw_input('Does the car crank up but fail to start? (Y/N)')
-
-            while check_crank not in ['Y', 'N']:
-                print(error_msg)
-                check_crank = raw_input('Does the car crank up but fail to start? (Y/N)')
-            if check_crank == 'Y':
-                print('Check spark plug connections.')
-            if check_crank == 'N':
-
-                check_engine = raw_input('Does the engine start and then die? (Y/N)')
-
-                while check_engine not in ['Y', 'N']:
-                    print(error_msg)
-                    check_engine = raw_input('Does the engine start and then die? (Y/N)')
-                if check_engine == 'N':
-                    print('Engine is not getting enough fuel. Clean fuel pump')
-                if check_engine == 'Y':
-
-                    check_fuel = raw_input('Does your car have fuel injection? (Y/N)')
-
-                    while check_fuel not in ['Y', 'N']:
-                        print(error_msg)
-                        check_fuel = raw_input('Does your car have fuel injection? (Y/N)')
-                    if check_fuel == 'Y':
-                        print('Get it in for service')
-                    if check_fuel == 'N':
-                        print('Check to ensure the choke is opening and closing.')
-
-
+    silent_fun()
 
 diagnose_car()
+
+
