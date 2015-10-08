@@ -9,7 +9,7 @@ __license__ = "MIT License"
 
 import pytest
 import mock
-from exercise3_solution import diagnose_car
+from exercise3 import diagnose_car
 
 
 def test_accepted_inputs(capsys):
