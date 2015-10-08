@@ -48,7 +48,7 @@ def diagnose_car():
 
 
 
-diagnose_car()
+#diagnose_car()
 
 #HELPER FUNCTIONS - Each function represents a box on flowchart and supports re-usability
 
