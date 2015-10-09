@@ -20,10 +20,10 @@ def name_that_shape():
         A few test cases
         ----------------
         Input:Please enter the number of sides (only valid from 3 to 10):3
-        Expected Output: Triangle
+        Expected Output: triangle
 
         Input:Please enter the number of sides (only valid from 3 to 10):10
-        Expected Output: Decagon
+        Expected Output: decagon
 
         Input:Please enter the number of sides (only valid from 3 to 10):20
         Expected Output: Error
@@ -34,22 +34,22 @@ def name_that_shape():
         Input:Please enter the number of sides (only valid from 3 to 10):3.0
         Expected Output: Error
 
-        Input:Please enter the number of sides (only valid from 3 to 10):
+        Input:Please enter the number of sides (only valid from 3 to 10):-3
         Expected Output: Error
 
         Input:Please enter the number of sides (only valid from 3 to 10):three
         Expected Output: Error
 
-        Input:Please enter the number of sides (only valid from 3 to 10):*&%
+        Input:Please enter the number of sides (only valid from 3 to 10):
         Expected Output: Error
 
-        Input:Please enter the number of sides (only valid from 3 to 10):3 ok
+        Input:Please enter the number of sides (only valid from 3 to 10):3 ok*&
         Expected Output: Error
-
-        This is the dictionary containing key value pairs
     """
-    #Reasons for using dictionary instead of multiple if_statements: type dictionary makes the code simpler and more elegant,
-    #and it is easier for adding, removing or adjusting keys in future.
+
+    # This is the dictionary containing key value pairs
+    # Reasons for using dictionary instead of multiple if_statements: type dictionary makes the code simpler and
+    # more elegant, and it is easier for adding, removing or adjusting key-value pairs in future.
 
     dictionary = {
         '3': 'triangle',
@@ -68,5 +68,4 @@ def name_that_shape():
     else:
         print("Error")
 
-
-    #name_that_shape()
+    # name_that_shape()
