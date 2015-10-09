@@ -12,20 +12,20 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-# Error message in case of improper user input
-error = 'I don\'t understand'
+# ERROR_MESSAGE in case of improper user input
+ERROR_MESSAGE = 'I don\'t understand'
+
+#  ========================================== Main Function =================================================
 
 
 def diagnose_car():
-    check_silence()
-
     """
     Interactively queries the user with yes/no questions to identify a
     possible issue with a car.
 
     Test Cases
     Inputs:Y,N
-    Expected: Outputs:Replace cables and try again.
+    Expected: Replace cables and try again.
 
     Inputs:Y,Y
     Expected: Clean terminals and try starting again.
@@ -46,13 +46,16 @@ def diagnose_car():
     Expected: Check to ensure the choke is opening and closing.
     """
 
+    check_silence()
 
+# diagnose_car()
 
-#diagnose_car()
-
-#HELPER FUNCTIONS - Each function represents a box on flowchart and supports re-usability
+# ========================================== Helper Functions ================================================
+# Each function represents a box on flowchart and supports re-usability
 
 # This function is the first box in the flow chart
+
+
 def check_silence():
     silent = raw_input("Is the car silent when you turn the key?")
     if silent == "Y":
@@ -60,10 +63,12 @@ def check_silence():
     elif silent == "N":
         check_noise()
     else:
-        print (error)
+        print (ERROR_MESSAGE)
         check_silence()
 
 # This is the left side of the flowchart
+
+
 def check_battery():
     corroded = raw_input("Are the battery terminals corroded?")
     if corroded == "Y":
@@ -71,10 +76,12 @@ def check_battery():
     elif corroded == "N":
         print ("Replace cables and try again.")
     else:
-        print (error)
+        print (ERROR_MESSAGE)
         check_battery()
 
 # Everything below is the right side of the flow chart
+
+
 def check_noise():
     click = raw_input("Does the car make a clicking noise?")
     if click == "Y":
@@ -82,8 +89,9 @@ def check_noise():
     elif click == "N":
         check_crank()
     else:
-        print (error)
+        print (ERROR_MESSAGE)
         check_noise()
+
 
 def check_crank():
     crank = raw_input("Does the car crank up but fail to start?")
@@ -92,8 +100,9 @@ def check_crank():
     elif crank == "N":
         check_engine()
     else:
-        print (error)
+        print (ERROR_MESSAGE)
         check_crank()
+
 
 def check_engine():
     engine = raw_input("Does engine start and then die?")
@@ -102,8 +111,9 @@ def check_engine():
     elif engine == "N":
         print ("Engine is not getting enough fuel. Clean fuel pump.")
     else:
-        print (error)
+        print (ERROR_MESSAGE)
         check_engine()
+
 
 def check_fuel():
     fuel = raw_input("Does your car have fuel injection?")
@@ -112,7 +122,7 @@ def check_fuel():
     elif fuel == "Y":
         print ("Get it in for service.")
     else:
-        print (error)
+        print (ERROR_MESSAGE)
         check_fuel()
 
 
