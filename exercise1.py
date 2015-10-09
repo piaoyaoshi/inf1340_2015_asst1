@@ -17,20 +17,24 @@ __license__ = "MIT License"
 
     Now, she is having troubles calculating how much she made or lost during the transaction.
     This program fixes that! Now, she's soooo happy :)
+
+    But,the result shows that she has a loss of $ 25065.00.Now, she is not happy any more :(
 """
 
-
+# valuables needed for this programming
 commission_rate = 0.03
 stock_quantity = 2000
 cost_price = 900
 selling_price = 942.75
 
-stock_cost = stock_quantity * cost_price  #amount stock was bought
-purchase_commission = commission_rate * stock_cost  #amount paid to stock broker for buying
+# Purchasing transaction
+stock_cost = stock_quantity * cost_price
+purchase_commission = commission_rate * stock_cost
 amount_spent = stock_cost + purchase_commission
 
-stock_income = stock_quantity * selling_price #amount the stock was sold
-selling_commission = commission_rate * stock_income #amount paid to stock broker for selling
+# Selling transaction
+stock_income = stock_quantity * selling_price
+selling_commission = commission_rate * stock_income
 amount_received = stock_income - selling_commission
 
 profit = amount_received - amount_spent
